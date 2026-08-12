@@ -868,6 +868,9 @@ function spinRoulette() {
 // 결과 표시
 function showResult(sectionIndex) {
   // sectionIndex는 현재 sections 배열에서의 인덱스
+  console.log('showResult called with sectionIndex:', sectionIndex);
+  console.log('sections array:', sections);
+  console.log('sections[sectionIndex]:', sections[sectionIndex]);
 
   // 원본 등수 찾기 (제거된 등수를 고려해서)
   let originalRank = 1;
@@ -882,6 +885,8 @@ function showResult(sectionIndex) {
       currentIndex++;
     }
   }
+
+  console.log('originalRank:', originalRank);
 
   // 당첨자 수 증가
   prizeCount[originalRank - 1]++;
