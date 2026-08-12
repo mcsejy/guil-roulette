@@ -834,9 +834,9 @@ function spinRoulette() {
   const randomStop = randomSectionIndex * sliceAngle + sliceAngle / 2; // 섹션 중앙을 가리키도록
 
   // 회전 속도 계산
-  // 포인터가 위(270도)에 있으므로, Canvas 회전 = randomStop - 270도
+  // 포인터가 위(270도)에 있으므로, Canvas 회전 = 270 - randomStop도
   const spins = 5; // 최소 5바퀴
-  const totalRotation = spins * 360 + randomStop - 270;
+  const totalRotation = spins * 360 + 270 - randomStop;
 
   // 애니메이션
   const startRotation = currentRotation;
@@ -893,7 +893,7 @@ function showResult(sectionIndex) {
 
   waitText.classList.add('hidden');
   resultText.classList.remove('hidden');
-  resultText.textContent = sections[sectionIndex] + ' - ' + gift + ` [DEBUG: idx=${sectionIndex}, rank=${originalRank}]`;
+  resultText.textContent = sections[sectionIndex] + ' - ' + gift;
 
   // 인원수 확인 및 등수 제거
   const requiredCount = parseInt(document.getElementById('rank' + originalRank + 'count').value) || 0;
