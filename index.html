@@ -833,6 +833,11 @@ function spinRoulette() {
   const randomSectionIndex = Math.floor(Math.random() * sectionCount);
   const randomStop = randomSectionIndex * sliceAngle + sliceAngle / 2; // 섹션 중앙을 가리키도록
 
+  console.log('=== SPIN DEBUG ===');
+  console.log('randomSectionIndex:', randomSectionIndex);
+  console.log('randomStop:', randomStop);
+  console.log('sections[randomSectionIndex]:', sections[randomSectionIndex]);
+
   // 회전 속도 계산
   // 포인터가 위(270도)에 있으므로, Canvas 회전 = 270 - randomStop도
   const spins = 5; // 최소 5바퀴
@@ -870,6 +875,10 @@ function spinRoulette() {
 function showResult(sectionIndex) {
   // sectionIndex는 현재 sections 배열에서의 인덱스
 
+  console.log('=== RESULT DEBUG ===');
+  console.log('sectionIndex:', sectionIndex);
+  console.log('sections[sectionIndex]:', sections[sectionIndex]);
+
   // 원본 등수 찾기 (제거된 등수를 고려해서)
   let originalRank = 1;
   let currentIndex = 0;
@@ -883,6 +892,8 @@ function showResult(sectionIndex) {
       currentIndex++;
     }
   }
+
+  console.log('originalRank:', originalRank);
 
   // 당첨자 수 증가
   prizeCount[originalRank - 1]++;
