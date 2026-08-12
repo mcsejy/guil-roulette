@@ -544,14 +544,35 @@ hr.rule-thin {
     max-width: 100%;
   }
 
+  .event-container {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 10px;
+  }
+
   .event-title {
     font-size: 18px;
     margin: 12px 0 8px;
+    order: 2;
   }
 
   .event-subtitle {
     font-size: 13px;
     line-height: 1.4;
+    order: 3;
+  }
+
+  .roulette-and-prize {
+    order: 4;
+    margin: 15px 0;
+  }
+
+  .result-box {
+    order: 5;
+    padding: 12px;
+    min-height: 50px;
+    font-size: 16px;
+    margin: 15px 0;
   }
 
   .roulette-container {
@@ -609,12 +630,6 @@ hr.rule-thin {
   .prize-list-table td {
     padding: 8px 4px;
   }
-
-  .result-box {
-    padding: 12px;
-    min-height: 50px;
-    font-size: 16px;
-  }
 }
 
 @media (max-width: 480px) {
@@ -626,16 +641,38 @@ hr.rule-thin {
     padding: 10px 10px 12px;
   }
 
+  .event-container {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 8px;
+  }
+
   .kicker {
     font-size: 11px;
+    order: 1;
   }
 
   .event-title {
     font-size: 16px;
+    order: 2;
   }
 
   .event-subtitle {
     font-size: 12px;
+    order: 3;
+  }
+
+  .roulette-and-prize {
+    order: 4;
+    margin: 12px 0;
+  }
+
+  .result-box {
+    order: 5;
+    padding: 10px;
+    min-height: 45px;
+    font-size: 14px;
+    margin: 12px 0;
   }
 
   .roulette-container {
@@ -673,12 +710,6 @@ hr.rule-thin {
   .prize-list-table th,
   .prize-list-table td {
     padding: 6px 3px;
-  }
-
-  .result-box {
-    padding: 10px;
-    min-height: 45px;
-    font-size: 14px;
   }
 }
 
