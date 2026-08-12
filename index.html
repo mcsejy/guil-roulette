@@ -893,7 +893,7 @@ function showResult(sectionIndex) {
 
   waitText.classList.add('hidden');
   resultText.classList.remove('hidden');
-  resultText.textContent = sections[sectionIndex] + ' - ' + gift;
+  resultText.textContent = sections[sectionIndex] + ' - ' + gift + ` [DEBUG: idx=${sectionIndex}, rank=${originalRank}]`;
 
   // 인원수 확인 및 등수 제거
   const requiredCount = parseInt(document.getElementById('rank' + originalRank + 'count').value) || 0;
