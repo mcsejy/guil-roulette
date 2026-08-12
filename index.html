@@ -286,13 +286,14 @@ hr.rule-thin {
   border: 3px solid var(--accent);
   border-radius: 16px;
   padding: 15px 20px;
-  margin: 15px 0;
-  min-height: 60px;
+  margin: 20px 0 0 0;
+  min-height: 280px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  flex: 1;
 }
 
 .result-label {
@@ -733,7 +734,7 @@ hr.rule-thin {
     <!-- 룰렛과 상금 설정 좌우 배치 -->
     <div class="roulette-and-prize">
       <!-- 룰렛 -->
-      <div style="text-align: center;">
+      <div style="text-align: center; display: flex; flex-direction: column;">
         <div class="roulette-wrapper">
           <div class="roulette-container">
             <canvas id="rouletteCanvas" class="roulette-canvas" width="800" height="800"></canvas>
@@ -741,6 +742,13 @@ hr.rule-thin {
           </div>
         </div>
         <button class="spin-button" id="spinBtn" style="margin-top: 15px;">룰렛</button>
+
+        <!-- 결과 (룰렛 아래) -->
+        <div class="result-box" style="margin-top: 20px; flex: 1;">
+          <div class="result-label">결과</div>
+          <div class="result-text hidden" id="resultText"></div>
+          <div class="result-text hidden" id="waitText">룰렛 버튼을 눌러주세요</div>
+        </div>
       </div>
 
       <!-- 상금 입력 -->
@@ -817,13 +825,6 @@ hr.rule-thin {
         <button onclick="resetPrizeList()" style="background: #999; color: white; border: none; padding: 12px 20px; border-radius: 6px; cursor: pointer; font-size: 14px; font-family: 'Noto Sans KR', sans-serif; font-weight: 600; transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px;">🗑️ 삭제</button>
       </div>
 
-    </div>
-
-    <!-- 결과 -->
-    <div class="result-box">
-      <div class="result-label">결과</div>
-      <div class="result-text hidden" id="resultText"></div>
-      <div class="result-text hidden" id="waitText">룰렛 버튼을 눌러주세요</div>
     </div>
     </div>
 
