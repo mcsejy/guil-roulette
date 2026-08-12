@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=1000">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>구일고 행운을 잡아라 이벤트</title>
 <meta name="description" content="구일고등학교 학부모동아리 티핑포인트의 행운을 잡아라 룰렛 이벤트">
 <meta property="og:title" content="구일고 행운을 잡아라 이벤트">
@@ -531,6 +531,154 @@ hr.rule-thin {
   .spin-button,
   .reset-button {
     width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+
+  .paper {
+    padding: 12px 12px 14px;
+    max-width: 100%;
+  }
+
+  .event-title {
+    font-size: 18px;
+    margin: 12px 0 8px;
+  }
+
+  .event-subtitle {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .roulette-container {
+    width: 200px;
+    height: 200px;
+  }
+
+  .roulette-canvas {
+    width: 100%;
+    height: 100%;
+  }
+
+  .pointer {
+    top: -15px;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 20px solid #FFD700;
+  }
+
+  .spin-button {
+    padding: 12px 30px;
+    font-size: 16px;
+    margin-top: 12px;
+  }
+
+  .prize-input-section {
+    margin: 20px 0 !important;
+  }
+
+  .prize-input-title {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .prize-input-header {
+    font-size: 11px;
+    gap: 4px;
+  }
+
+  .prize-input-row {
+    gap: 4px;
+    font-size: 11px;
+  }
+
+  .prize-input-row input {
+    padding: 5px 4px;
+    font-size: 11px;
+  }
+
+  .prize-list-table {
+    font-size: 12px;
+  }
+
+  .prize-list-table th,
+  .prize-list-table td {
+    padding: 8px 4px;
+  }
+
+  .result-box {
+    padding: 12px;
+    min-height: 50px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+
+  .paper {
+    padding: 10px 10px 12px;
+  }
+
+  .kicker {
+    font-size: 11px;
+  }
+
+  .event-title {
+    font-size: 16px;
+  }
+
+  .event-subtitle {
+    font-size: 12px;
+  }
+
+  .roulette-container {
+    width: 180px;
+    height: 180px;
+  }
+
+  .pointer {
+    top: -12px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 18px solid #FFD700;
+  }
+
+  .spin-button {
+    padding: 10px 25px;
+    font-size: 14px;
+  }
+
+  .prize-input-header,
+  .prize-input-row {
+    grid-template-columns: 45px 40px 50px 50px 50px;
+    font-size: 10px;
+  }
+
+  .prize-input-row input {
+    padding: 4px 3px;
+    font-size: 10px;
+  }
+
+  .prize-list-table {
+    font-size: 11px;
+  }
+
+  .prize-list-table th,
+  .prize-list-table td {
+    padding: 6px 3px;
+  }
+
+  .result-box {
+    padding: 10px;
+    min-height: 45px;
+    font-size: 14px;
   }
 }
 
