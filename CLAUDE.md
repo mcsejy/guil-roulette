@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project overview
 
-정적 웹페이지: 구일고등학교 학부모동아리 "티핑포인트"에서 제작하는 학생 대상 입시 정보 신문. 메인 타이틀은 "구일 입시 신문"이며, 신문 형태의 레이아웃(헤드라인, 컬럼, 섹션 구분)으로 구성한다.
+정적 웹페이지: 구일고등학교 학부모동아리 "티핑포인트"에서 제작하는 행운을 잡아라 룰렛 이벤트 페이지. Canvas를 사용한 인터랙티브 룰렛 게임으로, 학생들이 즐길 수 있는 재미있는 이벤트입니다.
 
 ## Tech stack
 
