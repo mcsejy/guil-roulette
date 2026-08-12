@@ -11,13 +11,13 @@
 
 :root {
   --ink: #1a1a1a;
-  --paper-bg: #f7f4ec;
-  --rule: #1a1a1a;
+  --paper-bg: #ffffff;
+  --rule: #FF1493;
   --muted: #555;
-  --accent: #a11212;
-  --grade-teal: #2f6f6b;
+  --accent: #FF1493;
+  --grade-teal: #00A884;
   --grade-teal-light: #dcefec;
-  --grade-purple: #5b4b8a;
+  --grade-purple: #7B4EBE;
   --grade-purple-light: #e9e3f6;
 }
 
@@ -25,119 +25,166 @@
 
 body {
   margin: 0;
-  background: #d8d3c4;
+  background-image: url('이벤트.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   font-family: 'Noto Sans KR', sans-serif;
   color: var(--ink);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
 }
 
 .paper {
   max-width: 1000px;
-  margin: 16px auto;
-  background: var(--paper-bg);
-  padding: 14px 20px 16px;
-  box-shadow: 0 0 24px rgba(0,0,0,0.25);
+  margin: 0 auto;
+  background: transparent;
+  padding: 40px 25px;
+  box-shadow: none;
+  border-radius: 0;
 }
 
 /* 마스트헤드 */
 .masthead {
   text-align: center;
-  padding: 10px 0 0;
+  padding: 10px 0 5px;
+  background: transparent;
+  border-radius: 0;
+  color: #1a1a1a;
+  box-shadow: none;
 }
 
 .masthead-title {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 12px;
   font-family: 'Noto Serif KR', serif;
   font-weight: 900;
-  font-size: 34px;
+  font-size: 28px;
   margin: 0;
   letter-spacing: 0.04em;
   line-height: 1.1;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
 }
 
 .masthead-mark {
-  width: 32px;
-  height: 28px;
+  width: 36px;
+  height: 32px;
   object-fit: contain;
+  filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.2));
 }
 
 .masthead-sub {
   font-family: 'Noto Serif KR', serif;
-  font-style: italic;
-  font-size: 10.5px;
-  color: var(--muted);
-  margin: 6px 0 9px;
-  letter-spacing: 0.01em;
+  font-size: 11px;
+  color: rgba(255,255,255,0.95);
+  margin: 4px 0 0;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
 }
 
 .masthead-sub strong {
-  color: var(--accent);
+  color: #FFD700;
   font-style: normal;
+  font-weight: 700;
 }
 
 hr.rule-thin-top {
-  border: none;
-  border-top: 1px solid var(--rule);
-  margin: 0 0 3px;
+  display: none;
 }
 
 hr.rule-thick {
-  border: none;
-  border-top: 4px solid var(--rule);
-  margin: 0 0 10px;
+  display: none;
 }
 
 hr.rule-thin {
-  border: none;
-  border-top: 1px solid #999;
-  margin: 12px 0;
+  display: none;
 }
 
 .kicker {
   display: inline-block;
-  font-size: 8.5px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.06em;
-  color: var(--accent);
-  margin-bottom: 3px;
+  letter-spacing: 0.08em;
+  color: white;
+  background: var(--accent);
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
 }
 
 /* 메인 콘텐츠 */
 .event-container {
+  padding: 20px;
+}
+
+/* 룰렛과 상금 설정 좌우 배치 */
+.event-container > .kicker {
+  display: block;
   text-align: center;
+}
+
+.event-container > .event-title,
+.event-container > .event-subtitle {
+  text-align: center;
+}
+
+.roulette-and-prize {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+  margin: 20px 0;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.roulette-wrapper {
+  justify-self: center;
+}
+
+.prize-input-section {
+  margin: 0 !important;
 }
 
 .event-title {
   font-family: 'Noto Serif KR', serif;
-  font-size: 28px;
+  font-size: 38px;
   font-weight: 900;
-  margin: 0 0 10px;
-  color: var(--accent);
-  text-transform: uppercase;
+  margin: 0 0 5px;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
   letter-spacing: 0.05em;
 }
 
 .event-subtitle {
   font-family: 'Noto Serif KR', serif;
-  font-size: 13px;
-  color: var(--muted);
-  margin: 0 0 20px;
-  line-height: 1.5;
+  font-size: 14px;
+  color: rgba(255,255,255,0.9);
+  margin: 0 0 25px;
+  line-height: 1.6;
+  font-weight: 500;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
 }
 
 /* 룰렛 스타일 */
 .roulette-wrapper {
   display: flex;
   justify-content: center;
-  margin: 20px 0;
+  margin: 25px 0 30px;
 }
 
 .roulette-container {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 320px;
+  height: 320px;
   margin: 0 auto;
 }
 
@@ -153,16 +200,16 @@ hr.rule-thin {
 
 .pointer {
   position: absolute;
-  top: -15px;
+  top: -20px;
   left: 50%;
   transform: translateX(-50%);
   width: 0;
   height: 0;
-  border-left: 12px solid transparent;
-  border-right: 12px solid transparent;
-  border-top: 20px solid var(--accent);
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 25px solid #FFD700;
   z-index: 10;
-  filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.2));
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)) drop-shadow(0 0 3px rgba(255,215,0,0.5));
 }
 
 /* 버튼 */
@@ -174,28 +221,28 @@ hr.rule-thin {
 }
 
 .spin-button {
-  background: var(--accent);
+  background: linear-gradient(135deg, #FF1493 0%, #FF69B4 100%);
   color: white;
   border: none;
-  padding: 12px 35px;
-  font-size: 16px;
+  padding: 15px 50px;
+  font-size: 18px;
   font-weight: 700;
-  border-radius: 4px;
+  border-radius: 30px;
   cursor: pointer;
   font-family: 'Noto Sans KR', sans-serif;
   letter-spacing: 0.05em;
-  box-shadow: 0 3px 8px rgba(161, 18, 18, 0.3);
-  transition: all 0.2s;
+  box-shadow: 0 8px 28px rgba(255, 20, 147, 0.4);
+  transition: all 0.3s;
+  text-transform: uppercase;
 }
 
 .spin-button:hover:not(:disabled) {
-  background: #8a0f0f;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(161, 18, 18, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(255, 107, 53, 0.5);
 }
 
 .spin-button:active:not(:disabled) {
-  transform: translateY(0);
+  transform: translateY(-1px);
 }
 
 .spin-button:disabled {
@@ -204,57 +251,214 @@ hr.rule-thin {
 }
 
 .reset-button {
-  background: var(--grade-teal);
+  background: linear-gradient(135deg, #7B4EBE 0%, #9B5EDE 100%);
   color: white;
   border: none;
-  padding: 12px 30px;
+  padding: 12px 45px;
   font-size: 14px;
   font-weight: 600;
-  border-radius: 4px;
+  border-radius: 30px;
   cursor: pointer;
   font-family: 'Noto Sans KR', sans-serif;
   transition: all 0.2s;
+  box-shadow: 0 6px 20px rgba(123, 78, 190, 0.35);
 }
 
 .reset-button:hover {
-  background: #20504c;
   transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(123, 78, 190, 0.45);
 }
 
 /* 결과 표시 */
 .result-box {
-  background: #fff;
-  border: 2px solid var(--accent);
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 3px solid var(--accent);
+  border-radius: 16px;
   padding: 15px 20px;
-  margin: 20px 0;
+  margin: 15px 0;
   min-height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .result-label {
   font-size: 11px;
   font-weight: 700;
   color: var(--accent);
-  letter-spacing: 0.05em;
-  margin-bottom: 5px;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+  text-transform: uppercase;
 }
 
 .result-text {
   font-family: 'Noto Serif KR', serif;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 900;
-  color: var(--ink);
+  color: var(--accent);
+  transition: all 0.3s;
 }
 
 .result-text.hidden {
   opacity: 0;
+  height: 0;
 }
 
 /* 설명 텍스트 */
+.prize-section {
+  background: #fff;
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.prize-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--accent);
+  margin: 0 0 15px;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+.prize-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.prize-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.prize-item:last-child {
+  border-bottom: none;
+}
+
+.prize-rank {
+  font-weight: 700;
+  color: var(--accent);
+  min-width: 60px;
+}
+
+.prize-info {
+  flex: 1;
+  text-align: center;
+  color: var(--muted);
+}
+
+.prize-amount {
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: right;
+  min-width: 120px;
+}
+
+.prize-input-section {
+  background: rgba(255, 255, 255, 0.92);
+  border: 3px solid var(--accent);
+  border-radius: 16px;
+  padding: 25px;
+  margin: 20px auto;
+  max-width: 600px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.prize-input-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0 0 15px;
+  text-align: center;
+}
+
+.prize-input-header {
+  display: grid;
+  grid-template-columns: 60px 50px 80px 80px 70px;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 8px;
+}
+
+.prize-input-header div {
+  text-align: center;
+}
+
+.prize-input-header div:first-child {
+  text-align: left;
+}
+
+.prize-input-header div:last-child {
+  text-align: right;
+}
+
+.prize-input-row {
+  display: grid;
+  grid-template-columns: 60px 50px 80px 80px 70px;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+.prize-input-row label {
+  font-weight: 600;
+  color: #555;
+}
+
+.prize-input-row input {
+  padding: 6px 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 12px;
+  font-family: 'Noto Sans KR', sans-serif;
+  text-align: center;
+}
+
+.prize-input-row input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 4px rgba(161, 18, 18, 0.2);
+}
+
+.calc-button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'Noto Sans KR', sans-serif;
+  margin-top: 10px;
+  width: 100%;
+  transition: all 0.2s;
+}
+
+.calc-button:hover {
+  background: #8a0f0f;
+  transform: translateY(-1px);
+}
+
 .description {
   font-size: 9.5px;
   color: var(--muted);
@@ -269,12 +473,25 @@ hr.rule-thin {
 
 /* 푸터 */
 .paper-footer {
-  margin-top: 12px;
-  border-top: 1px solid #999;
-  padding-top: 5px;
+  margin-top: 20px;
+  border-top: none;
+  padding-top: 10px;
   text-align: center;
   font-size: 8px;
-  color: var(--muted);
+  color: rgba(255,255,255,0.7);
+  font-weight: 400;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 900px) {
+  .roulette-and-prize {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .roulette-wrapper {
+    justify-self: center;
+  }
 }
 
 @media (max-width: 800px) {
@@ -323,48 +540,136 @@ hr.rule-thin {
 
 <div class="paper">
 
-  <!-- 마스트헤드 -->
-  <header class="masthead">
-    <h1 class="masthead-title"><img src="assets/guil-mark.png" alt="구일고등학교 마크" class="masthead-mark">구일고 행운을 잡아라 이벤트</h1>
-    <p class="masthead-sub">학부모동아리 <strong>티핑포인트</strong>가 준비한 특별 이벤트</p>
-  </header>
 
   <hr class="rule-thin-top">
   <hr class="rule-thick">
 
   <!-- 이벤트 콘텐츠 -->
   <div class="event-container">
-    <span class="kicker">특별 이벤트</span>
+    <span class="kicker">학부모 동아리 티핑포인트가 준비한 특별 이벤트</span>
     <h2 class="event-title">행운을 잡아라!</h2>
     <p class="event-subtitle">
       룰렛을 돌려서 행운의 상품을 받아보세요.<br>
       오늘의 운을 시험해보세요!
     </p>
 
-    <!-- 룰렛 -->
-    <div class="roulette-wrapper">
-      <div class="roulette-container">
-        <canvas id="rouletteCanvas" class="roulette-canvas"></canvas>
-        <div class="pointer"></div>
+    <!-- 룰렛과 상금 설정 좌우 배치 -->
+    <div class="roulette-and-prize">
+      <!-- 룰렛 -->
+      <div style="text-align: center;">
+        <div class="roulette-wrapper">
+          <div class="roulette-container">
+            <canvas id="rouletteCanvas" class="roulette-canvas"></canvas>
+            <div class="pointer"></div>
+          </div>
+        </div>
+        <button class="spin-button" id="spinBtn" style="margin-top: 15px;">룰렛</button>
       </div>
-    </div>
 
-    <!-- 버튼 -->
-    <div class="button-group">
-      <button class="spin-button" id="spinBtn">스핀하기</button>
-      <button class="reset-button" id="resetBtn">다시 시작</button>
+      <!-- 상금 입력 -->
+      <div class="prize-input-section">
+      <h3 class="prize-input-title">💰 상금 설정</h3>
+
+      <div class="prize-input-header">
+        <div>등수</div>
+        <div>인원</div>
+        <div>금액</div>
+        <div>합산금액</div>
+        <div style="text-align: center;">선물</div>
+      </div>
+
+      <div class="prize-input-row">
+        <label>🥇 1등</label>
+        <input type="number" id="rank1count" placeholder="5" value="5" oninput="updatePrizePreview()">
+        <input type="number" id="rank1amount" placeholder="20000" value="20000" oninput="updatePrizePreview()">
+        <span id="rank1total" style="font-size: 12px; font-weight: 600; text-align: center;">100,000</span>
+        <input type="text" id="rank1gift" placeholder="상품명" value="화장품" style="padding: 6px 8px; border: 1px solid #ddd; border-radius: 4px; font-size: 11px; text-align: center;">
+      </div>
+
+      <div class="prize-input-row">
+        <label>🥈 2등</label>
+        <input type="number" id="rank2count" placeholder="10" value="10" oninput="updatePrizePreview()">
+        <input type="number" id="rank2amount" placeholder="10000" value="10000" oninput="updatePrizePreview()">
+        <span id="rank2total" style="font-size: 12px; font-weight: 600; text-align: center;">100,000</span>
+        <input type="text" id="rank2gift" placeholder="상품명" value="영양제" style="padding: 6px 8px; border: 1px solid #ddd; border-radius: 4px; font-size: 11px; text-align: center;">
+      </div>
+
+      <div class="prize-input-row">
+        <label>🥉 3등</label>
+        <input type="number" id="rank3count" placeholder="15" value="15" oninput="updatePrizePreview()">
+        <input type="number" id="rank3amount" placeholder="6000" value="6000" oninput="updatePrizePreview()">
+        <span id="rank3total" style="font-size: 12px; font-weight: 600; text-align: center;">90,000</span>
+        <input type="text" id="rank3gift" placeholder="상품명" value="키링" style="padding: 6px 8px; border: 1px solid #ddd; border-radius: 4px; font-size: 11px; text-align: center;">
+      </div>
+
+      <div class="prize-input-row">
+        <label>🎁 4등</label>
+        <input type="number" id="rank4count" placeholder="20" value="20" oninput="updatePrizePreview()">
+        <input type="number" id="rank4amount" placeholder="4000" value="4000" oninput="updatePrizePreview()">
+        <span id="rank4total" style="font-size: 12px; font-weight: 600; text-align: center;">80,000</span>
+        <input type="text" id="rank4gift" placeholder="상품명" value="초콜렛" style="padding: 6px 8px; border: 1px solid #ddd; border-radius: 4px; font-size: 11px; text-align: center;">
+      </div>
+
+      <div class="prize-input-row">
+        <label>🎀 5등</label>
+        <input type="number" id="rank5count" placeholder="30" value="30" oninput="updatePrizePreview()">
+        <input type="number" id="rank5amount" placeholder="2487" value="2487" oninput="updatePrizePreview()">
+        <span id="rank5total" style="font-size: 12px; font-weight: 600; text-align: center;">74,610</span>
+        <input type="text" id="rank5gift" placeholder="상품명" value="컵라면" style="padding: 6px 8px; border: 1px solid #ddd; border-radius: 4px; font-size: 11px; text-align: center;">
+      </div>
+
+      <div style="margin-top: 15px; padding-top: 15px; border-top: 2px solid var(--accent);">
+        <div class="prize-input-row" style="font-weight: 700; color: var(--accent); font-size: 14px;">
+          <label>합계</label>
+          <span id="totalCount" style="text-align: center;">80명</span>
+          <span id="totalAmount" style="text-align: center;">444,610</span>
+          <span></span>
+        </div>
+      </div>
+
+      <div class="prize-input-row" style="margin-top: 15px;">
+        <label>🍮 6등</label>
+        <input type="number" id="rank6count" placeholder="50" value="50" oninput="updatePrizePreview()">
+        <input type="number" id="rank6amount" placeholder="2000" value="2000" oninput="updatePrizePreview()">
+        <span id="rank6total" style="font-size: 12px; font-weight: 600; text-align: center;">100,000</span>
+        <input type="text" id="rank6gift" placeholder="상품명" value="젤리" style="padding: 6px 8px; border: 1px solid #ddd; border-radius: 4px; font-size: 11px; text-align: center;">
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px;">
+        <button onclick="savePrizeList()" style="background: var(--accent); color: white; border: none; padding: 12px 20px; border-radius: 6px; cursor: pointer; font-size: 14px; font-family: 'Noto Sans KR', sans-serif; font-weight: 600; transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px;">💾 저장</button>
+        <button onclick="resetPrizeList()" style="background: #999; color: white; border: none; padding: 12px 20px; border-radius: 6px; cursor: pointer; font-size: 14px; font-family: 'Noto Sans KR', sans-serif; font-weight: 600; transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px;">🗑️ 삭제</button>
+      </div>
+
+    </div>
     </div>
 
     <!-- 결과 -->
     <div class="result-box">
       <div class="result-label">결과</div>
       <div class="result-text hidden" id="resultText"></div>
-      <div class="result-text hidden" id="waitText">스핀 버튼을 눌러주세요</div>
+      <div class="result-text hidden" id="waitText">룰렛 버튼을 눌러주세요</div>
+    </div>
+
+    <!-- 상금 현황 리스트 -->
+    <div id="prizeListTable" style="display: none; background: rgba(255, 255, 255, 0.92); border: 3px solid var(--accent); border-radius: 16px; padding: 20px; margin: 20px 0;">
+      <h3 style="text-align: center; color: var(--accent); margin: 0 0 15px; font-size: 14px; font-weight: 700;">상금 현황</h3>
+      <table style="width: 100%; border-collapse: collapse; font-size: 12px;">
+        <thead>
+          <tr style="border-bottom: 2px solid var(--accent);">
+            <th style="padding: 10px; text-align: center; font-weight: 700; color: var(--accent);">등수</th>
+            <th style="padding: 10px; text-align: center; font-weight: 700; color: var(--accent);">인원</th>
+            <th style="padding: 10px; text-align: center; font-weight: 700; color: var(--accent);">금액</th>
+            <th style="padding: 10px; text-align: center; font-weight: 700; color: var(--accent);">합산금액</th>
+            <th style="padding: 10px; text-align: center; font-weight: 700; color: var(--accent);">선물</th>
+          </tr>
+        </thead>
+        <tbody id="prizeTableBody">
+        </tbody>
+      </table>
     </div>
 
     <p class="description">
-      이 룰렛은 구일고등학교 학부모동아리 티핑포인트에서 준비한 재미있는 이벤트입니다.<br>
-      상품의 내용은 추후 공지될 예정입니다.
+      이 룰렛은 구일고등학교 학부모동아리 티핑포인트에서 준비한 행운의 이벤트입니다.
     </p>
   </div>
 
@@ -381,18 +686,17 @@ hr.rule-thin {
 const canvas = document.getElementById('rouletteCanvas');
 const ctx = canvas.getContext('2d');
 const spinBtn = document.getElementById('spinBtn');
-const resetBtn = document.getElementById('resetBtn');
 const resultText = document.getElementById('resultText');
 const waitText = document.getElementById('waitText');
 
-// 룰렛 섹션 (상품명)
+// 룰렛 섹션 (등수만 표시)
 const sections = [
-  '🎁 행운의 선물',
-  '📚 도서 상품',
-  '✨ 특별 상품',
-  '🎯 경품권',
-  '🎊 축하 상품',
-  '💝 감사 상품'
+  '🥇 1등',
+  '🥈 2등',
+  '🥉 3등',
+  '🎁 4등',
+  '🎀 5등',
+  '🍮 6등'
 ];
 
 // 색상 (회전하며 보이도록)
@@ -402,11 +706,12 @@ const colors = [
   '#D4E8FF',
   '#E5F2CC',
   '#FFE5E5',
-  '#FFFFE5'
+  '#F0E5FF'
 ];
 
 let isSpinning = false;
 let currentRotation = 0;
+let prizeCount = [0, 0, 0, 0, 0, 0]; // 각 등수별 당첨자 수
 
 // 룰렛 그리기
 function drawRoulette(rotation = 0) {
@@ -417,36 +722,84 @@ function drawRoulette(rotation = 0) {
   ctx.translate(radius, radius);
   ctx.rotate(rotation);
 
+  // 배경 원형 그라데이션 (3D 효과)
+  const bgGradient = ctx.createRadialGradient(0, 0, 0, 0, 0, radius);
+  bgGradient.addColorStop(0, 'rgba(255,255,255,0.1)');
+  bgGradient.addColorStop(1, 'rgba(0,0,0,0.1)');
+  ctx.fillStyle = bgGradient;
+  ctx.beginPath();
+  ctx.arc(0, 0, radius - 5, 0, Math.PI * 2);
+  ctx.fill();
+
   // 각 섹션 그리기
   sections.forEach((section, index) => {
     // 섹션 배경
     ctx.beginPath();
     ctx.arc(0, 0, radius - 5, index * sliceAngle, (index + 1) * sliceAngle);
     ctx.lineTo(0, 0);
-    ctx.fillStyle = colors[index];
+
+    // 색상에 그라데이션 추가
+    const sectionGradient = ctx.createRadialGradient(0, 0, 0, 0, 0, radius - 5);
+    sectionGradient.addColorStop(0, colors[index]);
+    sectionGradient.addColorStop(1, colors[index]);
+    ctx.fillStyle = sectionGradient;
     ctx.fill();
-    ctx.strokeStyle = '#1a1a1a';
-    ctx.lineWidth = 2;
+
+    // 테두리 - 금색 테두리
+    ctx.strokeStyle = '#FFD700';
+    ctx.lineWidth = 3;
     ctx.stroke();
 
-    // 텍스트
+    // 내부 테두리
+    ctx.strokeStyle = '#ffffff';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+
+    // 텍스트 (더 큼)
     ctx.save();
     ctx.rotate(index * sliceAngle + sliceAngle / 2);
     ctx.textAlign = 'right';
     ctx.textBaseline = 'middle';
     ctx.fillStyle = '#1a1a1a';
-    ctx.font = 'bold 13px "Noto Sans KR"';
-    ctx.fillText(section, radius - 40, 0);
+    ctx.font = 'bold 14px "Noto Sans KR"';
+    ctx.shadowColor = 'rgba(255,255,255,0.5)';
+    ctx.shadowBlur = 3;
+    ctx.fillText(section, radius - 35, 0);
     ctx.restore();
   });
 
-  // 중앙 원
+  // 외곽 테두리 (금속 효과)
   ctx.beginPath();
-  ctx.arc(0, 0, 25, 0, Math.PI * 2);
-  ctx.fillStyle = '#fff';
-  ctx.fill();
-  ctx.strokeStyle = '#1a1a1a';
+  ctx.arc(0, 0, radius - 5, 0, Math.PI * 2);
+  ctx.strokeStyle = '#FFD700';
+  ctx.lineWidth = 4;
+  ctx.stroke();
+
+  // 외곽 그림자
+  ctx.beginPath();
+  ctx.arc(0, 0, radius - 5, 0, Math.PI * 2);
+  ctx.strokeStyle = 'rgba(0,0,0,0.3)';
   ctx.lineWidth = 2;
+  ctx.stroke();
+
+  // 중앙 원 (더 크고 화려함)
+  const centerGradient = ctx.createRadialGradient(-8, -8, 0, 0, 0, 30);
+  centerGradient.addColorStop(0, '#ffffff');
+  centerGradient.addColorStop(0.7, '#f0f0f0');
+  centerGradient.addColorStop(1, '#d0d0d0');
+
+  ctx.beginPath();
+  ctx.arc(0, 0, 28, 0, Math.PI * 2);
+  ctx.fillStyle = centerGradient;
+  ctx.fill();
+
+  // 중앙 원 테두리
+  ctx.strokeStyle = '#FFD700';
+  ctx.lineWidth = 3;
+  ctx.stroke();
+
+  ctx.strokeStyle = '#1a1a1a';
+  ctx.lineWidth = 1;
   ctx.stroke();
 
   ctx.restore();
@@ -503,9 +856,40 @@ function showResult(angle) {
   const adjustedAngle = (360 - angle) % 360;
   const sectionIndex = Math.floor(adjustedAngle / sliceAngle) % sections.length;
 
+  // 원본 등수 찾기 (제거된 등수를 고려해서)
+  let originalRank = 1;
+  let currentIndex = 0;
+  for (let i = 1; i <= 6; i++) {
+    const rankElement = document.getElementById('rank' + i + 'count');
+    if (rankElement) {
+      if (currentIndex === sectionIndex) {
+        originalRank = i;
+        break;
+      }
+      currentIndex++;
+    }
+  }
+
+  // 당첨자 수 증가
+  prizeCount[originalRank - 1]++;
+
+  // 선물 정보 가져오기
+  const giftElement = document.getElementById('rank' + originalRank + 'gift');
+  const gift = giftElement ? giftElement.value : '선물';
+
   waitText.classList.add('hidden');
   resultText.classList.remove('hidden');
-  resultText.textContent = sections[sectionIndex];
+  resultText.textContent = sections[sectionIndex] + ' - ' + gift;
+
+  // 인원수 확인 및 등수 제거
+  const requiredCount = parseInt(document.getElementById('rank' + originalRank + 'count').value) || 0;
+  if (prizeCount[originalRank - 1] >= requiredCount) {
+    // 해당 등수를 sections에서 제거
+    sections.splice(sectionIndex, 1);
+    colors.splice(sectionIndex, 1);
+    // 룰렛 다시 그리기
+    drawRoulette();
+  }
 }
 
 // 다시 시작
@@ -515,12 +899,109 @@ function reset() {
   currentRotation = 0;
   resultText.classList.add('hidden');
   waitText.classList.remove('hidden');
+
+  // 당첨자 수 초기화
+  prizeCount = [0, 0, 0, 0, 0, 0];
+
+  // sections과 colors 초기화
+  sections.length = 0;
+  sections.push('🥇 1등', '🥈 2등', '🥉 3등', '🎁 4등', '🎀 5등', '🍮 6등');
+  colors.length = 0;
+  colors.push('#FFE5CC', '#E8D5F2', '#D4E8FF', '#E5F2CC', '#FFE5E5', '#F0E5FF');
+
   drawRoulette();
+}
+
+// 상금 미리보기 (실시간 계산)
+function updatePrizePreview() {
+  let totalCount = 0;
+  let totalAmount = 0;
+
+  for (let i = 1; i <= 6; i++) {
+    const countEl = document.getElementById('rank' + i + 'count');
+    if (!countEl) continue;
+
+    const count = parseInt(countEl.value) || 0;
+    const amount = parseInt(document.getElementById('rank' + i + 'amount').value) || 0;
+    const subtotal = count * amount;
+
+    totalCount += count;
+    totalAmount += subtotal;
+
+    document.getElementById('rank' + i + 'total').textContent = subtotal.toLocaleString();
+  }
+
+  // 전체 합계 업데이트
+  document.getElementById('totalCount').textContent = totalCount.toLocaleString() + '명';
+  document.getElementById('totalAmount').textContent = totalAmount.toLocaleString() + '원';
+
+  // 테이블 실시간 업데이트 (테이블이 표시 중일 때만)
+  const tableDiv = document.getElementById('prizeListTable');
+  if (tableDiv.style.display !== 'none') {
+    updatePrizeTable();
+  }
+}
+
+// 상금 현황 업데이트 함수
+function updatePrizeTable() {
+  const tableBody = document.getElementById('prizeTableBody');
+  const tableDiv = document.getElementById('prizeListTable');
+
+  tableBody.innerHTML = '';
+
+  const ranks = ['1등', '2등', '3등', '4등', '5등', '6등'];
+  const emojis = ['🥇', '🥈', '🥉', '🎁', '🎀', '🍮'];
+
+  for (let i = 1; i <= 6; i++) {
+    const count = document.getElementById('rank' + i + 'count').value;
+    const amount = document.getElementById('rank' + i + 'amount').value;
+    const total = document.getElementById('rank' + i + 'total').textContent;
+    const gift = document.getElementById('rank' + i + 'gift').value;
+
+    const row = document.createElement('tr');
+    row.style.borderBottom = '1px solid #eee';
+    row.innerHTML = `
+      <td style="padding: 8px; text-align: center;">${emojis[i-1]} ${ranks[i-1]}</td>
+      <td style="padding: 8px; text-align: center;">${count}</td>
+      <td style="padding: 8px; text-align: center;">${amount.toLocaleString()}</td>
+      <td style="padding: 8px; text-align: center;">${total}</td>
+      <td style="padding: 8px; text-align: center;">${gift}</td>
+    `;
+    tableBody.appendChild(row);
+  }
+
+  tableDiv.style.display = 'block';
+}
+
+// 상금 현황 저장 함수
+function savePrizeList() {
+  updatePrizeTable();
+}
+
+// 기본값으로 초기화 함수
+function resetPrizeList() {
+  const defaults = [
+    { count: 5, amount: 20000, gift: '화장품' },
+    { count: 10, amount: 10000, gift: '영양제' },
+    { count: 15, amount: 6000, gift: '키링' },
+    { count: 20, amount: 4000, gift: '초콜렛' },
+    { count: 30, amount: 2487, gift: '컵라면' },
+    { count: 50, amount: 2000, gift: '젤리' }
+  ];
+
+  for (let i = 1; i <= 6; i++) {
+    document.getElementById('rank' + i + 'count').value = defaults[i-1].count;
+    document.getElementById('rank' + i + 'amount').value = defaults[i-1].amount;
+    document.getElementById('rank' + i + 'gift').value = defaults[i-1].gift;
+  }
+
+  updatePrizePreview();
+  // 테이블 숨기기
+  document.getElementById('prizeListTable').style.display = 'none';
 }
 
 // 이벤트 리스너
 spinBtn.addEventListener('click', spinRoulette);
-resetBtn.addEventListener('click', reset);
 
 // 초기 그리기
 drawRoulette();
